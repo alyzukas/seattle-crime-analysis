@@ -1,7 +1,6 @@
 """Download the World Bank indicators used in international-crime-eda.ipynb.
 
 Source: World Bank, World Development Indicators, public API (https://api.worldbank.org).
-No account or key is needed.
 
 What it does
 ------------
