@@ -125,7 +125,7 @@ seattle-crime-analysis/
 ## Authors
 
 - **Alyssa Zukas** — [alyzukas@seattleu.edu](mailto:alyzukas@seattleu.edu)
-- **Paul Skentzos** - [skentzos@seattleu.edu](mailto:skentzos@seattleu.edu)
+- **Paul Skentzos** - [pskentzos@seattleu.edu](mailto:pskentzos@seattleu.edu)
 - **Jennifer Poling** - [jpoling1@seattleu.edu](mailto:jpoling1@seattleu.edu)
 
 ---
