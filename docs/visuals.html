@@ -36,6 +36,23 @@
   <!-- To add an idea, copy one <li> block and edit it. -->
   <ol class="viz">
     <li>
+      <h2>How is each crime type trending in Seattle?<span class="tag">Seattle</span></h2>
+      <p class="chart">A <strong>multi-line graph</strong> layered with a point chart. Different color for each type of crime and direct labeled instead of using a legend.</p>
+      <dl>
+        <dt>Variables</dt><dd>Year, Crime Type, Crime rate per 100k for each type</dd>
+        <dt>Encodings</dt><dd>x = year; y = rate; color = Crime Types in grey w/ focus type in red</dd>
+      </dl>
+    </li>
+     <li>
+      <h2>What are Seattle's peer cities? Why are these cities Seattle's peers?<span class="tag">National</span></h2>
+      <p class="chart">A <strong>heatmap</strong> of the similarity features (standardized as z-scores) for Seattle and its peer cities. This shows why they count as peers and supports our method in the final report.</p>
+      <dl>
+        <dt>Variables</dt><dd>City, each similarity feature (z-score)</dd>
+        <dt>Encodings</dt><dd>x = feature; y = city; color = z-score</dd>
+        <dt>Design</dt><dd>Diverging color scale centered at 0 (the national average)</dd>
+      </dl>
+    </li>
+    <li>
       <h2>Is Seattle's crime higher or lower than its peer cities?<span class="tag">National</span></h2>
       <p class="chart">A <strong>ranked dot plot</strong> of violent crime per 100,000 residents for Seattle and its peer cities, with Seattle highlighted.</p>
       <dl>
@@ -44,7 +61,6 @@
         <dt>Design</dt><dd>Grey dots for peers, one bright color for Seattle; direct labels instead of a legend</dd>
       </dl>
     </li>
-
     <li>
       <h2>Is Seattle following the same trend as its peers? How does it differ?<span class="tag">National</span></h2>
       <p class="chart">A <strong>multi-line chart</strong> of crime rates over time for each peer city (grey), with Seattle in color.</p>
@@ -54,49 +70,8 @@
         <dt>Design</dt><dd>Grey context lines; mark the 2021 reporting-system change</dd>
       </dl>
     </li>
-
-    <li>
-      <h2>Is the U.S. following the same trend as other countries? How does it differ?<span class="tag">Global</span></h2>
-      <p class="chart">A <strong>multi-line chart</strong> of crime rates over time for each peer country (grey), with the U.S. in color.</p>
-      <dl>
-        <dt>Variables</dt><dd>Year, country, homicide rate per 100k (the most comparable measure across countries)</dd>
-        <dt>Encodings</dt><dd>x = year; y = rate; color = U.S. vs. other countries</dd>
-        <dt>Design</dt><dd>Grey context lines; label the U.S. line directly</dd>
-      </dl>
-    </li>
-
-    <li>
-      <h2>Do economic conditions relate to crime rates?<span class="tag">National</span></h2>
-      <p class="chart"><strong>Faceted scatter plots</strong> comparing economic characteristics (median income, poverty rate, cost of living, population size, insurance coverage) against crime rates.</p>
-      <dl>
-        <dt>Variables</dt><dd>Census economic characteristics, violent and property crime rates per 100k</dd>
-        <dt>Encodings</dt><dd>x = economic measure (one facet each); y = crime rate; color = Seattle / peers / other cities</dd>
-        <dt>Design</dt><dd>Independent x-scales per facet; highlight Seattle and peers against grey cities</dd>
-      </dl>
-    </li>
-
-    <li>
-      <h2>Why are these cities Seattle's peers?<span class="tag">National</span></h2>
-      <p class="chart">A <strong>heatmap</strong> of the similarity features (standardized as z-scores) for Seattle and its peer cities. This shows why they count as peers and supports our method in the final report.</p>
-      <dl>
-        <dt>Variables</dt><dd>City, each similarity feature (z-score)</dd>
-        <dt>Encodings</dt><dd>x = feature; y = city; color = z-score</dd>
-        <dt>Design</dt><dd>Diverging color scale centered at 0 (the national average)</dd>
-      </dl>
-    </li>
-
-    <li>
-      <h2>How does the U.S. compare with other countries?<span class="tag">Global</span></h2>
-      <p class="chart">A <strong>heatmap</strong> of the similarity features (z-scores) for the U.S. and other countries.</p>
-      <dl>
-        <dt>Variables</dt><dd>Country, each comparison feature (z-score)</dd>
-        <dt>Encodings</dt><dd>x = feature; y = country; color = z-score</dd>
-        <dt>Design</dt><dd>Same diverging color scale as the city heatmap so the two can be compared</dd>
-      </dl>
-    </li>
-
-    <li>
-      <h2>How has Seattle's violent crime changed compared with other cities?<span class="tag">Seattle</span></h2>
+     <li>
+      <h2>How has Seattle's violent crime changed compared to other cities?<span class="tag">National</span></h2>
       <p class="chart">A <strong>line graph</strong> of violent crime over time, with other cities in grey and Seattle in a bright color such as emerald.</p>
       <dl>
         <dt>Variables</dt><dd>Year, city, violent crime rate per 100k</dd>
@@ -104,13 +79,40 @@
         <dt>Design</dt><dd>Grey context lines; emerald for Seattle to make it stand out</dd>
       </dl>
     </li>
-
-      <li>
-      <h2>How is violent crime trending in Seattle?<span class="tag">Seattle</span></h2>
-      <p class="chart">A <strong>multi-line graph</strong> layered with a point chart. Different color for each type of violent crime and direct labeled instead of using a legend.</p>
+    <li>
+      <h2>Is crime in the U.S. following the same trend as other countries? How does it differ?<span class="tag">Global</span></h2><span class="tag">National</span></h2>
+      <p class="chart">A <strong>multi-line chart</strong> of crime rates over time for each peer country (grey), with the U.S. in color.</p>
       <dl>
-        <dt>Variables</dt><dd>Year, Crime Type, Crime rate per 100k for each type</dd>
-        <dt>Encodings</dt><dd>x = year; y = rate; color = Crime Times</dd>
+        <dt>Variables</dt><dd>Year, country, homicide rate per 100k (the most comparable measure across countries)</dd>
+        <dt>Encodings</dt><dd>x = year; y = rate; color = U.S. vs. other countries</dd>
+        <dt>Design</dt><dd>Grey context lines; label the U.S. line directly</dd>
+      </dl>
+    </li>
+    <li>
+      <h2>How do economic consitions in the U.S. compare to other countries?<span class="tag">Global</span></h2><span class="tag">National</span></h2>
+      <p class="chart">A <strong>heatmap</strong> of the similarity features (z-scores) for the U.S. and other countries.</p>
+      <dl>
+        <dt>Variables</dt><dd>Country, each comparison feature (z-score)</dd>
+        <dt>Encodings</dt><dd>x = feature; y = country; color = z-score</dd>
+        <dt>Design</dt><dd>Same diverging color scale as the city heatmap so the two can be compared</dd>
+      </dl>
+    </li>
+    <li>
+      <h2>Do global economic conditions relate to crime rates in Seattle?<span class="tag">Seattle</span></h2><span class="tag">Global</span></h2>
+      <p class="chart"><strong>Faceted scatter plots</strong> comparing economic characteristics (median income, poverty rate, cost of living, population size, insurance coverage) against crime rates.</p>
+      <dl>
+        <dt>Variables</dt><dd>Census economic characteristics, violent and property crime rates per 100k</dd>
+        <dt>Encodings</dt><dd>x = economic measure (one facet each); y = crime rate; color = Seattle / peers / other cities</dd>
+        <dt>Design</dt><dd>Independent x-scales per facet; highlight Seattle and peers against grey cities</dd>
+      </dl>
+    </li>
+     <li>
+      <h2>How has violent crime in Seattle compare on a global scale?<span class="tag">Seattle</span></h2><span class="tag">Global</span></h2>
+      <p class="chart">A <strong>line graph</strong> of violent crime over time, with other cities in grey and Seattle in a bright color such as emerald.</p>
+      <dl>
+        <dt>Variables</dt><dd>Year, city, violent crime rate per 100k</dd>
+        <dt>Encodings</dt><dd>x = year; y = rate; color = Seattle vs. other cities</dd>
+        <dt>Design</dt><dd>Grey context lines; emerald for Seattle to make it stand out</dd>
       </dl>
     </li>
   
