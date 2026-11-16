@@ -46,8 +46,8 @@ seattle-crime-analysis/
 │   ├── Seattle.ipynb                           # Seattle Level Data Preparation + EDA (Jennifer)
 │   └── international-crime-eda.ipynb.ipynb     # Global Level Data Preparation + EDA (Paul)
 │   └── fetch_worldbank.py                      # Updated world data code for project (Paul)
-│   ├── national-prep.ipynb                # National Level Data Preparaton (Alyssa)
-│   ├── national-eda.ipynb                 # [Pending] National Level Data EDA (Alyssa)
+│   └── national-prep.ipynb                     # National Level Data Preparaton (Alyssa)
+│   └── national-eda.ipynb                      # National Level Data EDA (Alyssa)
 │   
 │  
 │
@@ -58,8 +58,7 @@ seattle-crime-analysis/
 │   └── Seattle.html           # Moved seattle.html to the docs directory.
 │   └── world.html             # Updated scatterplots
 │   └── index.html             # Updated scatterplots
-│   └── d
-│   └── d
+│   └── national-eda.html
 │
 ├── reports/
 │   ├── Final_Report.pdf             # Formal report with 10 visualizations and design justification
