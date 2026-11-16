@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visualization Ideas | Crime Analysis at Three Scales</title>
+  <style>
+    body { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; color: #222; background: #fafafa;
+           max-width: 760px; margin: 0 auto; padding: 48px 16px; line-height: 1.5; }
+    h1 { font-size: 1.8rem; margin-bottom: 4px; }
+    .sub { color: #666; margin-top: 0; }
+    .back { font-size: 0.9rem; color: #4c72b0; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    .viz { list-style: none; padding: 0; margin-top: 32px; counter-reset: viz; }
+    .viz li { counter-increment: viz; background: #fff; border: 1px solid #ddd; border-radius: 8px;
+              padding: 20px; margin-bottom: 16px; }
+    .viz h2 { font-size: 1.1rem; margin: 0 0 6px; color: #4c72b0; }
+    .viz h2::before { content: counter(viz) ". "; }
+    .viz .chart { margin: 0 0 10px; color: #333; }
+    .viz dl { display: grid; grid-template-columns: 110px 1fr; gap: 4px 12px; margin: 0; font-size: 0.92rem; }
+    .viz dt { color: #777; }
+    .viz dd { margin: 0; color: #444; }
+    .tag { display: inline-block; font-size: 0.75rem; color: #4c72b0; border: 1px solid #c9d5ea;
+           border-radius: 10px; padding: 0 8px; margin-left: 6px; vertical-align: middle; }
+    footer { margin-top: 40px; font-size: 0.85rem; color: #777; }
+  </style>
+</head>
+<body>
+  <a class="back" href="index.html">&larr; Back to project home</a>
+  <h1>Visualization Ideas</h1>
+  <p class="sub">Group brainstorm: what each chart would show and how we plan to build it.</p>
+  <p>We will first identify the U.S. cities most similar to Seattle ("peer cities") based on population,
+     income, poverty, cost of living, and health insurance coverage. We will then use these visualizations
+     to compare Seattle with its peers, the nation, and the world.</p>
+
+  <!-- To add an idea, copy one <li> block and edit it. -->
+  <ol class="viz">
+    <li>
+      <h2>Is Seattle's crime higher or lower than its peer cities?<span class="tag">National</span></h2>
+      <p class="chart">A <strong>ranked dot plot</strong> of violent crime per 100,000 residents for Seattle and its peer cities, with Seattle highlighted.</p>
+      <dl>
+        <dt>Variables</dt><dd>City, violent crime rate per 100k (most recent year)</dd>
+        <dt>Encodings</dt><dd>Position on x = crime rate; y = city, sorted by rate; color = Seattle vs. peers</dd>
+        <dt>Design</dt><dd>Grey dots for peers, one bright color for Seattle; direct labels instead of a legend</dd>
+      </dl>
+    </li>
+
+    <li>
+      <h2>Is Seattle following the same trend as its peers? How does it differ?<span class="tag">National</span></h2>
+      <p class="chart">A <strong>multi-line chart</strong> of crime rates over time for each peer city (grey), with Seattle in color.</p>
+      <dl>
+        <dt>Variables</dt><dd>Year, city, crime rate per 100k</dd>
+        <dt>Encodings</dt><dd>x = year; y = rate; color = Seattle vs. peers</dd>
+        <dt>Design</dt><dd>Grey context lines; mark the 2021 reporting-system change</dd>
+      </dl>
+    </li>
+
+    <li>
+      <h2>Is the U.S. following the same trend as other countries? How does it differ?<span class="tag">Global</span></h2>
+      <p class="chart">A <strong>multi-line chart</strong> of crime rates over time for each peer country (grey), with the U.S. in color.</p>
+      <dl>
+        <dt>Variables</dt><dd>Year, country, homicide rate per 100k (the most comparable measure across countries)</dd>
+        <dt>Encodings</dt><dd>x = year; y = rate; color = U.S. vs. other countries</dd>
+        <dt>Design</dt><dd>Grey context lines; label the U.S. line directly</dd>
+      </dl>
+    </li>
+
+    <li>
+      <h2>Do economic conditions relate to crime rates?<span class="tag">National</span></h2>
+      <p class="chart"><strong>Faceted scatter plots</strong> comparing economic characteristics (median income, poverty rate, cost of living, population size, insurance coverage) against crime rates.</p>
+      <dl>
+        <dt>Variables</dt><dd>Census economic characteristics, violent and property crime rates per 100k</dd>
+        <dt>Encodings</dt><dd>x = economic measure (one facet each); y = crime rate; color = Seattle / peers / other cities</dd>
+        <dt>Design</dt><dd>Independent x-scales per facet; highlight Seattle and peers against grey cities</dd>
+      </dl>
+    </li>
+
+    <li>
+      <h2>Why are these cities Seattle's peers?<span class="tag">National</span></h2>
+      <p class="chart">A <strong>heatmap</strong> of the similarity features (standardized as z-scores) for Seattle and its peer cities. This shows why they count as peers and supports our method in the final report.</p>
+      <dl>
+        <dt>Variables</dt><dd>City, each similarity feature (z-score)</dd>
+        <dt>Encodings</dt><dd>x = feature; y = city; color = z-score</dd>
+        <dt>Design</dt><dd>Diverging color scale centered at 0 (the national average)</dd>
+      </dl>
+    </li>
+
+    <li>
+      <h2>How does the U.S. compare with other countries?<span class="tag">Global</span></h2>
+      <p class="chart">A <strong>heatmap</strong> of the similarity features (z-scores) for the U.S. and other countries.</p>
+      <dl>
+        <dt>Variables</dt><dd>Country, each comparison feature (z-score)</dd>
+        <dt>Encodings</dt><dd>x = feature; y = country; color = z-score</dd>
+        <dt>Design</dt><dd>Same diverging color scale as the city heatmap so the two can be compared</dd>
+      </dl>
+    </li>
+
+    <li>
+      <h2>How has Seattle's violent crime changed compared with other cities?<span class="tag">Seattle</span></h2>
+      <p class="chart">A <strong>line graph</strong> of violent crime over time, with other cities in grey and Seattle in a bright color such as emerald.</p>
+      <dl>
+        <dt>Variables</dt><dd>Year, city, violent crime rate per 100k</dd>
+        <dt>Encodings</dt><dd>x = year; y = rate; color = Seattle vs. other cities</dd>
+        <dt>Design</dt><dd>Grey context lines; emerald for Seattle to make it stand out</dd>
+      </dl>
+    </li>
+  </ol>
+
+  <footer>Charts are interactive and need an internet connection to load.</footer>
+</body>
+</html>
